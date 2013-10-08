@@ -46,8 +46,3 @@ app.get('/users', user.list);
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
-
-db.createCollection("test42", function(err,collection){
-  collection.insert({"test42":"test37"});
-
-});
