@@ -1,98 +1,11 @@
-html
-  head
-    title Calendar
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    link(href='css/style.css', rel='stylesheet')
-    link(href='css/bootstrap.min.css', rel='stylesheet', media='screen')
-    link(href='css/bootstrap-responsive.css', rel='stylesheet')
-    script(src='http://code.jquery.com/jquery.js')
-    script(src='js/bootstrap.min.js')
-    script(src='js/found.js')
-  body
-    extends layout
+extends layout
 
-    block content
-        h1= title
-        #employees
-            - each employee in employees
-              div.employee
-                div.created_at= employee.created_at
-                div.title= employee.title 
-                div.name= employee.name
-            a(href="/employee/new")!= "Add New Employee"
-    .row-fluid
-      .span.12.subtract
-        h1 +
-    .calendars
-      h2 I am the first note
-      h2 I am another note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a calendar
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-      h2 I am a note
-    .row-fluid(style='display: table;')
-      .found
-        form.front
-          .dude_wheres_my_car
-            input.telescope(type='search', autocomplete='off', autocorrect='off', placeholder='Search', dir='ltr', spellcheck='false')
-          .forgotten
+block content
+    h1= title
+    #employees
+        - each employee in employees
+          div.employee
+            div.created_at= employee.created_at
+            div.title= employee.title 
+            div.name= employee.name
+        a(href="/employee/new")!= "Add New Employee"
