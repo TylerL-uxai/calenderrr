@@ -39,6 +39,7 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+var employeeProvider= new EmployeeProvider('localhost', 27017);
 
 //Routes
 
