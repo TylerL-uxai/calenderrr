@@ -9,6 +9,7 @@ var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
 var mongo = require('mongodb');
+var EmployeeProvider = require('./employeeprovider').EmployeeProvider;
 
 var mongoUri = process.env.MONGOLAB_URI ||  process.env.MONGOHQ_URL || 'mongodb://localhost/mydb';
 
@@ -37,6 +38,34 @@ app.use(express.static(path.join(__dirname, 'public')));
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
+
+
+//Routes
+
+app.get('/', function(req, res){
+  employeeProvider.findAll(function(error, emps){
+      res.render('index', {
+            title: 'Employees',
+            employees:emps
+        });
+  });
+});
+
+app.get('/employee/new', function(req, res) {
+    res.render('employee_new', {
+        title: 'New Employee'
+    });
+});
+
+//save new employee
+app.post('/employee/new', function(req, res){
+    employeeProvider.save({
+        title: req.param('title'),
+        name: req.param('name')
+    }, function( error, docs) {
+        res.redirect('/')
+    });
+});
 
 app.get('/', routes.index);
 app.get('/users', user.list);
