@@ -7,6 +7,7 @@ var express = require('express')
   , user = require('./routes/user')
   , http = require('http')
   , path = require('path')
+var mongo = require('mongodb');
   , EmployeeProvider = require('./employeeprovider').EmployeeProvider;
 
 var app = express();
@@ -31,7 +32,7 @@ app.configure('development', function(){
 
 //var employeeProvider= new EmployeeProvider('localhost', 27017);
 
-// var employeeProvider= process.env.MONGOLAB_URI || 'mongodb://localhost/test';
+var employeeProvider= process.env.MONGOLAB_URI || 'mongodb://localhost/test';
 
 
 
