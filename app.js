@@ -29,7 +29,9 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
-var employeeProvider= new EmployeeProvider('localhost', 27017);
+//var employeeProvider= new EmployeeProvider('localhost', 27017);
+
+var mongoUri = process.env.MONGOLAB_URI || 'mongodb://localhost/test';
 
 //Routes
 
