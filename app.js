@@ -31,7 +31,7 @@ app.configure('development', function(){
 
 //var employeeProvider= new EmployeeProvider('localhost', 27017);
 
-var mongoUri = process.env.MONGOLAB_URI || 'mongodb://localhost/test';
+var employeeProvider= process.env.MONGOLAB_URI || 'mongodb://localhost/test';
 
 //Routes
 
